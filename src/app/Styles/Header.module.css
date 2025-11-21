@@ -1,0 +1,188 @@
+/* Promo banner (fixed at top) */
+.promoBanner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  background-color: #DBB485;
+  color: black;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 12px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Wrapper inside Ant Header */
+.antHeaderWrapper {
+  pointer-events: auto;
+}
+
+/* Main header (no animation, no scroll effect) */
+.header {
+  background: #FDFCF9;
+  height: 40px; /* fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px 12px;
+  box-shadow: 0 8px 20px rgba(15, 15, 15, 0.06);
+  overflow: visible;
+}
+
+/* inner container (grid layout) */
+.inner {
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+}
+
+/* left nav */
+.left {
+  justify-self: start;
+}
+
+/* ant menu customizations - FIXED HOVER STYLES */
+.menu :global(.ant-menu-horizontal) {
+  background: transparent;
+  border: none;
+  line-height: 80px;
+}
+
+.menu :global(.ant-menu-item) {
+  color: #000;
+  padding: 0 14px;
+  margin: 0 6px;
+  font-size: 13px;
+  position: relative;
+  overflow: hidden;
+  border: none !important;
+}
+
+/* COMPLETELY REMOVE Ant Design's default blue border */
+.menu :global(.ant-menu-horizontal > .ant-menu-item::after),
+.menu :global(.ant-menu-horizontal > .ant-menu-submenu::after) {
+  display: none !important;
+  border-bottom: none !important;
+}
+
+.menu :global(.ant-menu-item::after) {
+  display: none !important;
+  border-bottom: none !important;
+}
+
+.menu :global(.ant-menu-item a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom left-to-right hover animation */
+.menu :global(.ant-menu-item) {
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.menu :global(.ant-menu-item::before) {
+  content: '';
+  position: absolute;
+  bottom: 2px; /* Position it slightly above the bottom to create gap */
+  left: 0;
+  width: 0;
+  height: 3px; /* Smaller, thinner line */
+  background-color: #000; /* Black color */
+  border-radius: 3px; 
+  transition: width 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.menu :global(.ant-menu-item:hover::before) {
+  width: 100%;
+}
+
+.menu :global(.ant-menu-item:hover) {
+  color: #000 !important;
+  background: transparent !important;
+}
+
+.menu :global(.ant-menu-item:hover a) {
+  color: #000 !important;
+}
+
+/* Remove any Ant Design default hover backgrounds and borders */
+.menu :global(.ant-menu-item:hover),
+.menu :global(.ant-menu-item-active),
+.menu :global(.ant-menu-item-selected) {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+/* Remove the default Ant Design selected item styles */
+.menu :global(.ant-menu-horizontal > .ant-menu-item:hover),
+.menu :global(.ant-menu-horizontal > .ant-menu-submenu:hover),
+.menu :global(.ant-menu-horizontal > .ant-menu-item-active),
+.menu :global(.ant-menu-horizontal > .ant-menu-submenu-active),
+.menu :global(.ant-menu-horizontal > .ant-menu-item-selected),
+.menu :global(.ant-menu-horizontal > .ant-menu-submenu-selected) {
+  border-bottom: none !important;
+  color: #000 !important;
+}
+
+/* center logo */
+.center {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* right section */
+.right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* button icons */
+:global(.ant-btn-text) {
+  color: #000;
+}
+
+:global(.ant-btn-text:hover) {
+  color: #666;
+}
+
+/* badge style */
+:global(.ant-badge .ant-badge-count) {
+  background: #000;
+}
+
+/* Mobile menu button - REMOVED */
+.mobileMenuBtn {
+  display: none;
+}
+/* Hide promo banner when scrolling */
+.hideBanner {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: all 0.35s ease-in-out;
+}
+
+.promoBanner {
+  transition: all 0.35s ease-in-out;
+}
