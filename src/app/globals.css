@@ -651,7 +651,9 @@ border-radius: 0 !important;
 }
 
 .four-components__col.wholesale {
-  background: var(--blush);
+  /* background: var(--blush);
+   */
+   background: var(--gold);
 }
 
 .four-components__col.team {

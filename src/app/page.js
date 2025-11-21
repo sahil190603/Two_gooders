@@ -165,7 +165,7 @@ export default function HomePage() {
           </div>
           <div className="image">
             <img
-              src="/images/fund_raising.webp"
+              src="/images/fund_raising.jpg"
               alt="Fundraising illustration"
             />
           </div>
