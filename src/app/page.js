@@ -19,10 +19,15 @@ export default function HomePage() {
   return (
     <main>
       <section className="hero" aria-labelledby="hero-heading">
-        <div className="hero-image-single" aria-hidden="true">
+        <AnimatedSection
+          delay={0.06}
+          className="hero-image-single"
+          aria-hidden="true"
+        >
           <img src="/images/home3.jpg" alt="People giving and gifting" />
 
-          <div
+          <AnimatedSection
+            delay={0.08}
             className="hero-quote-container gift-tag-quote"
             aria-hidden="true"
           >
@@ -32,72 +37,98 @@ export default function HomePage() {
               </h3>
               <cite className="quote-author">— Helen Keller</cite>
             </div>
-          </div>
-        </div>
+          </AnimatedSection>
+        </AnimatedSection>
 
-        <div className="hero-overlay">
-          <div className="hero-main-content" aria-live="polite">
+        <AnimatedSection delay={0.1} className="hero-overlay">
+          <AnimatedSection
+            delay={0.12}
+            className="hero-main-content"
+            aria-live="polite"
+          >
             <h2 className="hero-mainline">
               Make Two Gooders your go-to shop for gifts for any reason!
             </h2>
 
-            <div className="hero-lines">
+            <AnimatedSection delay={0.14} className="hero-lines">
               {lines.map((text, i) => (
                 <p key={i} className="hero-line">
                   <span className="hero-line-text">{text}</span>
                 </p>
               ))}
-            </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.16}>
+              <h3 className="hero-summary">
+                One + Two + Three = Gifts That Give Back!
+              </h3>
+            </AnimatedSection>
+          </AnimatedSection>
+        </AnimatedSection>
 
-            <h3 className="hero-summary">
-              One + Two + Three = Gifts That Give Back!
-            </h3>
-          </div>
-        </div>
-        <div
+        <AnimatedSection
+          delay={0.18}
           className="hero-join-wrapper"
           role="region"
           aria-label="Join actions"
         >
-          <div className="hero-join-title">Join Us In Doing Some Good!</div>
+          <AnimatedSection delay={0.2}>
+            <div className="hero-join-title">Join Us In Doing Some Good!</div>
+          </AnimatedSection>
 
-          <div className="hero-join-bar">
+          <AnimatedSection delay={0.22} className="hero-join-bar">
             <div className="hero-join-buttons">
-              <div className="hero-btn-tagline">
-                Start shopping to support charity
-              </div>
-              <Button
-                size="small"
-                className="hero-join-btn"
-                onClick={() => go("/shop")}
-              >
-                Shop Here
-              </Button>
-              <Divider type="vertical" className="divider" />
-              <div className="hero-btn-tagline">
-                Boost your business and the good we all do!
-              </div>
-              <Button
-                size="small"
-                className="hero-join-btn"
-                onClick={() => go("/apply-supplier")}
-              >
-                Become a Supplier
-              </Button>
-              <Divider type="vertical" className="divider" />
-              <div className="hero-btn-tagline">
-                Learn more about our no-cost fundraising program
-              </div>
-              <Button
-                size="small"
-                className="hero-join-btn"
-                onClick={() => go("/charities")}
-              >
-                Fundraise
-              </Button>
+              <AnimatedSection delay={0.24} className="hero-btn-tagline">
+                <div>Start shopping to support charity</div>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.26}>
+                <Button
+                  size="small"
+                  className="hero-join-btn"
+                  onClick={() => go("/shop")}
+                >
+                  Shop Here
+                </Button>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.27}>
+                <Divider type="vertical" className="divider" />
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.28} className="hero-btn-tagline">
+                <div>Boost your business and the good we all do!</div>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.3}>
+                <Button
+                  size="small"
+                  className="hero-join-btn"
+                  onClick={() => go("/apply-supplier")}
+                >
+                  Become a Supplier
+                </Button>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.31}>
+                <Divider type="vertical" className="divider" />
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.32} className="hero-btn-tagline">
+                <div>Learn more about our no-cost fundraising program</div>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.34}>
+                <Button
+                  size="small"
+                  className="hero-join-btn"
+                  onClick={() => go("/charities")}
+                >
+                  Fundraise
+                </Button>
+              </AnimatedSection>
             </div>
-          </div>
-        </div>
+          </AnimatedSection>
+        </AnimatedSection>
       </section>
 
       {/* Rest of your existing content remains the same */}
@@ -166,10 +197,13 @@ export default function HomePage() {
           <div className="content">
             <h2>How Fundraising Works</h2>
             <p>
-              We give charities marketing support to drive sales through their affiliate store. In turn, they receive half the profit from their sales. 
+              We give charities marketing support to drive sales through their
+              affiliate store. In turn, they receive half the profit from their
+              sales.
             </p>
             <p>
-              Our company also donates a portion of our overall profit to additional charities each year.
+              Our company also donates a portion of our overall profit to
+              additional charities each year.
             </p>
           </div>
           <div className="image">
