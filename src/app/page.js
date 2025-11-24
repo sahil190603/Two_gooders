@@ -64,7 +64,7 @@ export default function HomePage() {
           <div className="hero-join-bar">
             <div className="hero-join-buttons">
               <div className="hero-btn-tagline">
-                Start shopping to suppot charity
+                Start shopping to support charity
               </div>
               <Button
                 size="small"
@@ -86,7 +86,7 @@ export default function HomePage() {
               </Button>
               <Divider type="vertical" className="divider" />
               <div className="hero-btn-tagline">
-                Learn more about our fundraising program
+                Learn more about our no-cost fundraising program
               </div>
               <Button
                 size="small"
@@ -111,13 +111,21 @@ export default function HomePage() {
           >
             <img src="/images/gift_giving.jpg" alt="Gift giving with purpose" />
             <AnimatedSection delay={0.3} className="overlay">
-              <h2>Gift Giving With Purpose</h2>
-              <p>
-                <strong>Before:</strong> Gifts only profited companies.
-              </p>
-              <p>
-                <strong>Now:</strong> Profits support your charity.
-              </p>
+              <div className="overlaySpacer" />
+              <div className="overlayInner">
+                <h2>Gift Giving With Purpose</h2>
+                <ul>
+                  <li>
+                    <strong>Before:</strong> Gifts only profited companies.
+                  </li>
+                  <li>
+                    <strong>Now:</strong> Profits support your charity.
+                  </li>
+                </ul>
+                <p aria-hidden="true" className="blank-line">
+                  &nbsp;
+                </p>
+              </div>
             </AnimatedSection>
           </AnimatedSection>
 
@@ -129,18 +137,21 @@ export default function HomePage() {
           >
             <img src="/images/why_wo_do.webp" alt="Community outreach" />
             <AnimatedSection delay={0.4} className="overlay">
-              <h2>Why We Do It</h2>
-              <ul>
-                <li>
-                  <strong>Shoppers:</strong> Make the world brighter.
-                </li>
-                <li>
-                  <strong>Suppliers:</strong> Sell with real purpose.
-                </li>
-                <li>
-                  <strong>Charities:</strong> Easily raise more funds.
-                </li>
-              </ul>
+              <div className="overlaySpacer" />
+              <div className="overlayInner">
+                <h2>Why We Do It</h2>
+                <ul>
+                  <li>
+                    <strong>Shoppers:</strong> Make the world brighter.
+                  </li>
+                  <li>
+                    <strong>Suppliers:</strong> Sell with real purpose.
+                  </li>
+                  <li>
+                    <strong>Charities:</strong> Easily raise more funds.
+                  </li>
+                </ul>
+              </div>
             </AnimatedSection>
           </AnimatedSection>
         </div>
@@ -155,12 +166,10 @@ export default function HomePage() {
           <div className="content">
             <h2>How Fundraising Works</h2>
             <p>
-              We give charities support to drive sales through their affiliate
-              store. They receive half the profit from sales.
+              We give charities marketing support to drive sales through their affiliate store. In turn, they receive half the profit from their sales. 
             </p>
             <p>
-              We also donate a portion of our overall profits to additional
-              charities.
+              Our company also donates a portion of our overall profit to additional charities each year.
             </p>
           </div>
           <div className="image">

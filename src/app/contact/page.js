@@ -3,6 +3,7 @@
 import React from "react";
 import "antd/dist/reset.css";
 import { Form, Input, Button, Row, Col, Card } from "antd";
+import { AnimatedSection } from "../components/AnimatedSection";
 
 export default function Contactpage() {
   const [form] = Form.useForm();
@@ -24,58 +25,79 @@ export default function Contactpage() {
     >
       <div style={{ maxWidth: 800, width: "100%" }}>
 
-        <h2 style={{ textAlign: "center", marginBottom: 6 }}>
-          Contact Us
-        </h2>
-        <h3 style={{ textAlign: "start", marginBottom: 18 }}>
-          Ask us anything below!
-        </h3>
+        {/* Heading */}
+        <AnimatedSection delay={0.1}>
+          <h2 style={{ textAlign: "center", marginBottom: 6 }}>Contact Us</h2>
+        </AnimatedSection>
 
-        <Card style={{ boxShadow: "none", borderRadius: 2 }}>
-          <Form
-            form={form}
-            layout="vertical"
-            onFinish={onFinish}
-            requiredMark={false}
-          >
-            <Row gutter={16}>
-              <Col xs={24} sm={12}>
-                <Form.Item
-                  name="name"
-                  rules={[{ required: true, message: "Please enter your name" }]}
-                >
-                  <Input placeholder="Name" />
+        {/* Sub-heading */}
+        <AnimatedSection delay={0.15}>
+          <h3 style={{ textAlign: "start", marginBottom: 18 }}>
+            Ask us anything below!
+          </h3>
+        </AnimatedSection>
+
+        {/* Form Card */}
+        <AnimatedSection delay={0.2}>
+          <Card style={{ boxShadow: "none", borderRadius: 2 }}>
+            <Form
+              form={form}
+              layout="vertical"
+              onFinish={onFinish}
+              requiredMark={false}
+            >
+              {/* Top two inputs */}
+              <AnimatedSection delay={0.25}>
+                <Row gutter={16}>
+                  <Col xs={24} sm={12}>
+                    <Form.Item
+                      name="name"
+                      rules={[{ required: true, message: "Please enter your name" }]}
+                    >
+                      <Input placeholder="Name" />
+                    </Form.Item>
+                  </Col>
+
+                  <Col xs={24} sm={12}>
+                    <Form.Item
+                      name="email"
+                      rules={[
+                        { required: true, message: "Please enter your email" },
+                        { type: "email", message: "Enter a valid email" },
+                      ]}
+                    >
+                      <Input placeholder="Email" />
+                    </Form.Item>
+                  </Col>
+                </Row>
+              </AnimatedSection>
+
+              {/* Phone */}
+              <AnimatedSection delay={0.3}>
+                <Form.Item name="phone">
+                  <Input placeholder="Phone Number" />
                 </Form.Item>
-              </Col>
+              </AnimatedSection>
 
-              <Col xs={24} sm={12}>
-                <Form.Item
-                  name="email"
-                  rules={[
-                    { required: true, message: "Please enter your email" },
-                    { type: "email", message: "Enter a valid email" },
-                  ]}
-                >
-                  <Input placeholder="Email" />
+              {/* Message */}
+              <AnimatedSection delay={0.35}>
+                <Form.Item name="message">
+                  <Input.TextArea placeholder="Message" rows={6} />
                 </Form.Item>
-              </Col>
-            </Row>
+              </AnimatedSection>
 
-            <Form.Item name="phone">
-              <Input placeholder="Phone Number" />
-            </Form.Item>
+              {/* Submit */}
+              <AnimatedSection delay={0.4}>
+                <Form.Item>
+                  <Button type="primary" htmlType="submit" style={{ borderRadius: 0 }}>
+                    Send
+                  </Button>
+                </Form.Item>
+              </AnimatedSection>
 
-            <Form.Item name="message">
-              <Input.TextArea placeholder="Message" rows={6} />
-            </Form.Item>
-
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Send
-              </Button>
-            </Form.Item>
-          </Form>
-        </Card>
+            </Form>
+          </Card>
+        </AnimatedSection>
       </div>
     </div>
   );

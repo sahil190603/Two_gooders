@@ -96,7 +96,6 @@
 }
 
 .container {
-  /* max-width: 1300px; */
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -112,7 +111,6 @@
   display: flex;
   gap: 24px;
   align-items: flex-start;
-  /* max-width: 1300px; */
   margin: 0 auto;
 }
 
@@ -131,6 +129,7 @@
 .founderContent h3 {
   margin: 0 0 6px 0;
   font-size: var(--text-xl);
+  color: rgba(201, 164, 108);
 }
 
 .foundername {
@@ -158,6 +157,13 @@
   background: transparent;
   font-style: italic;
   border-left: 3px solid rgba(201, 164, 108, 0.5);
+}
+.signature {
+  display: block;
+  width: 80px;
+  height: auto;
+  margin-top: 8px;
+  object-fit: contain;
 }
 
 /* ===== FOUNDING TEAM SECTION ===== */

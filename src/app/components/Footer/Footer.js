@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
+import { AnimatedSection } from "../AnimatedSection";
 import styles from "../../Styles/footer.module.css";
 import {
   FacebookOutlined,
@@ -20,8 +21,9 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
+      
       {/* top CTA / social */}
-      <div className={styles.top}>
+      <AnimatedSection delay={0.2} className={styles.top}>
         <div className={styles.topInner}>
           <h3 className={styles.topTitle}>Let's Get Social To Do Some Good!</h3>
           <div className={styles.social}>
@@ -54,10 +56,10 @@ export default function Footer() {
             </a>
           </div>
         </div>
-      </div>
+      </AnimatedSection>
 
       {/* middle columns */}
-      <div className={styles.middle}>
+      <AnimatedSection delay={0.3} className={styles.middle}>
         <div className={styles.column}>
           <h4>Our Website</h4>
           <ul>
@@ -94,11 +96,10 @@ export default function Footer() {
             </button>
           </form>
         </div>
-      </div>
+      </AnimatedSection>
 
       {/* bottom row */}
-      <div className={styles.bottom}>
-        {/* left: follow-on-shop & small links */}
+      <AnimatedSection delay={0.4} className={styles.bottom}>
         <div className={styles.leftBottom}>
           <div className={styles.smallLinks}>
             <a href="#">Search</a>
@@ -112,7 +113,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* right: payment icons (explicit, no map) */}
         <div className={styles.payments}>
           <img
             src="/images/Footer/AMEX.jpg"
@@ -139,7 +139,8 @@ export default function Footer() {
             onError={(e) => { e.currentTarget.style.opacity = 0.35; }}
           />
         </div>
-      </div>
+      </AnimatedSection>
+
     </footer>
   );
 }

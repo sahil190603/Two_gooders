@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styles from "./about.module.css";
 import { AnimatedSection } from "../components/AnimatedSection";
 
 export default function About() {
+  const [sigError, setSigError] = useState(false);
+  
   return (
     <main className={styles.page}>
       {/* HERO */}
@@ -128,7 +130,17 @@ export default function About() {
                     collective success of Two Gooders. In doing so, it will
                     become part of the legacy you leave as well."
                     <br />
-                    <em>- Amy</em>
+                    {!sigError ? (
+                      <img
+                        src="/images/about/sign.png"
+                        alt="Amy Myton signature"
+                        className={styles.signature}
+                        onError={() => setSigError(true)}
+                        loading="eager"
+                      />
+                    ) : (
+                      <em>- Amy</em>
+                    )}
                   </p>
                 </div>
               </AnimatedSection>
@@ -264,7 +276,7 @@ export default function About() {
                   <div className={styles.quoteBlock}>
                     <div className={styles.quoteIcon}>❝</div>
                     <p className={styles.quoteText}>
-                      I have always felt uneasy seeing so many people in need
+                      "I have always felt uneasy seeing so many people in need
                       and not being able to do much to help them. It is a
                       terrible feeling. When I was young and seeing vast
                       homelessness for the first time, I told my mom how sad it
@@ -272,7 +284,7 @@ export default function About() {
                       said we would help as many people as we could, but there
                       was only so much we could do as one family. It is very
                       fulfilling to be part of Two Gooders, a much bigger family
-                      that can help so much more.
+                      that can help so much more."
                     </p>
                     <p className={styles.quoteAuthor}>– Cooper</p>
                   </div>
@@ -377,8 +389,8 @@ export default function About() {
                   <div className={styles.quoteBlock}>
                     <div className={styles.quoteIcon}>❝</div>
                     <p className={styles.quoteText}>
-                      Athletics have been a vital part of my life, shaping who I
-                      am and opening doors for me and those around me. I truly
+                      "Athletics have been a vital part of my life, shaping who
+                      I am and opening doors for me and those around me. I truly
                       believe I wouldn't be where I am today without the
                       opportunities I was given at a young age. That's why I'm
                       so passionate about supporting nonprofit organizations
@@ -386,7 +398,7 @@ export default function About() {
                       children can experience the same joy and growth I did.
                       Being part of the team at Two Gooders allows me to do the
                       work I love knowing it supports causes that help more kids
-                      experience youth sports.
+                      experience youth sports."
                     </p>
                     <p className={styles.quoteAuthor}>– Kolbe</p>
                   </div>
@@ -421,8 +433,11 @@ export default function About() {
             <h3>Company Culture</h3>
             <p>
               The company culture at Two Gooders fosters equality and rewards
-              efforts of kindness, compassion, and community service. We value
-              collaboration and a people-first approach in everything we do.
+              efforts of kindness, compassion, inclusion, community service and
+              philanthropic endeavors. A culture where everyone on the team
+              places a high priority on being and doing good. We treat each
+              other with respect and appreciation regardless of race, ethnicity,
+              gender, lifestyle, age, experience, or title.
             </p>
           </AnimatedSection>
         </div>

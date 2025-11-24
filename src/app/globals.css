@@ -253,6 +253,7 @@ border-radius: 0 !important;
   white-space: nowrap;
   min-width: max-content;
   border-radius: 0;
+  width: 130px;
 }
 
 /* small screens: allow title to wrap so it doesn't overflow into the bar */
@@ -510,18 +511,18 @@ border-radius: 0 !important;
 /* -------------------------------------- */
 /* OVERLAY: gray tint + anchored top */
 /* -------------------------------------- */
-.overlay {
+/* .overlay {
   position: absolute;
   inset: 0;
-  padding: 36px 30px;
+  padding: 20px 30px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: flex-end;
+  align-items: flex-end;
   gap: 8px;
   pointer-events: none;
   background: linear-gradient(
-    to bottom,
+    to top,
     rgba(0,0,0,0.28) 0%,
     rgba(0,0,0,0.22) 40%,
     rgba(0,0,0,0.18) 70%,
@@ -553,7 +554,88 @@ border-radius: 0 !important;
 .overlay ul {
   padding-left: 20px;
   margin: 6px 0 12px;
+} */
+
+:root{
+  --content-width: 380px;   /* width of text column */
+  --text-offset: 10px;    
+  --bottom-spacing: 22px;
 }
+
+/* ensure each block is positioned relative so absolute children position correctly */
+.row .block { position: relative; }
+
+/* overlay covers the whole image */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.28) 0%,
+    rgba(0,0,0,0.22) 40%,
+    rgba(0,0,0,0.18) 70%,
+    rgba(0,0,0,0.12) 100%
+  );
+}
+
+/* vertical spacer keeps the same vertical rhythm (can keep as-is) */
+/* .overlaySpacer {
+  flex: 0 0 var(--vert-offset);
+  min-height: var(--min-offset);
+} */
+
+.overlayInner {
+  /* width: var(--content-width); */
+  /* max-width: 90%; */
+  pointer-events: auto;
+  text-align: left;  
+  bottom: var(--bottom-spacing);
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+
+.block.small .overlayInner,
+.block.big .overlayInner {
+  right: var(--text-offset);
+}
+
+.overlay h2 {
+  color: #fff;
+  margin: 0 0 8px 0;
+  font-size: var(--text-3xl);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+.overlay p,
+.overlay li {
+  color: #fff;
+  margin: 4px 0;
+  font-size: var(--text-base);
+  font-weight: 500;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+}
+
+.overlay ul {
+  list-style: disc inside;
+  margin: 8px 0 14px;
+  padding: 0;
+}
+
+/* tiny helper for the blank line inserted in HTML */
+.blank-line {
+  line-height: 1.0; /* adjust to control visual blankness */
+  margin: 0;
+  height: 1rem;     /* controls how tall the added blank line is */
+  opacity: 0;       /* keep invisible but still occupies space */
+  pointer-events: none;
+}
+
 
 /* -------------------------------------- */
 /* FUNDRAISING CARD */
@@ -902,4 +984,19 @@ border-radius: 0 !important;
     transform: none;
     transition: none;
   }
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background:rgba(253, 252, 249);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #DBB485;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #C9A46C;
 }
