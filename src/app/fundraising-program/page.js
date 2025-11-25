@@ -23,6 +23,9 @@ const FundraisingPage = () => {
           type="primary"
           className={styles.ctaButton}
           aria-label="Schedule a Call"
+          onClick={() => {
+            window.location.href = "/fundraising-program/Schedule-a-Call";
+          }}
         >
           Schedule a Call
         </Button>

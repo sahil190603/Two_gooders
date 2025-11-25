@@ -7,9 +7,9 @@ import { Button, Divider } from "antd";
 import { AnimatedSection } from "./components/AnimatedSection";
 
 const lines = [
-  "Your selected charity receives half the profit from your purchase. ONE GOODER",
+  "Your selected charity receives a big chunk of the profit from your purchase. ONE GOODER",
   "Additional funds from every sale go to our favorite charities. TWO GOODER",
-  "Many of our supplies support additional charities. Gifts That Give Back!",
+  "And...many of our suppliers support additional charities! Gifts That Give Back",
 ];
 
 export default function HomePage() {
@@ -47,7 +47,7 @@ export default function HomePage() {
             aria-live="polite"
           >
             <h2 className="hero-mainline">
-              Make Two Gooders your go-to shop for gifts for any reason!
+              Make Two Gooders your go-to shop for gifts for any reason
             </h2>
 
             <AnimatedSection delay={0.14} className="hero-lines">
@@ -85,14 +85,10 @@ export default function HomePage() {
                 <Button
                   size="small"
                   className="hero-join-btn"
-                  onClick={() => go("/shop")}
+                  onClick={() => go("/charities")}
                 >
                   Shop Here
                 </Button>
-              </AnimatedSection>
-
-              <AnimatedSection delay={0.27}>
-                <Divider type="vertical" className="divider" />
               </AnimatedSection>
 
               <AnimatedSection delay={0.28} className="hero-btn-tagline">
@@ -103,14 +99,10 @@ export default function HomePage() {
                 <Button
                   size="small"
                   className="hero-join-btn"
-                  onClick={() => go("/apply-supplier")}
+                  onClick={() => go("/suppliers-and-artisans")}
                 >
                   Become a Supplier
                 </Button>
-              </AnimatedSection>
-
-              <AnimatedSection delay={0.31}>
-                <Divider type="vertical" className="divider" />
               </AnimatedSection>
 
               <AnimatedSection delay={0.32} className="hero-btn-tagline">
@@ -121,7 +113,7 @@ export default function HomePage() {
                 <Button
                   size="small"
                   className="hero-join-btn"
-                  onClick={() => go("/charities")}
+                  onClick={() => go("/fundraising-program")}
                 >
                   Fundraise
                 </Button>
@@ -142,20 +134,28 @@ export default function HomePage() {
           >
             <img src="/images/gift_giving.jpg" alt="Gift giving with purpose" />
             <AnimatedSection delay={0.3} className="overlay">
-              <div className="overlaySpacer" />
-              <div className="overlayInner">
-                <h2>Gift Giving With Purpose</h2>
-                <ul>
-                  <li>
-                    <strong>Before:</strong> Gifts only profited companies.
-                  </li>
-                  <li>
-                    <strong>Now:</strong> Profits support your charity.
-                  </li>
-                </ul>
-                <p aria-hidden="true" className="blank-line">
-                  &nbsp;
-                </p>
+              <div className="overlayInner portraitRight">
+                {" "}
+                <div className="overlayInner portraitLeft">
+                  {" "}
+                  <h2>Gift Giving With Purpose</h2>{" "}
+                </div>{" "}
+                <div className="portraitCopy">
+                  {" "}
+                  <div className="line">
+                    {" "}
+                    <strong>Before Two Gooders:</strong>{" "}
+                    <span>Gift shopping only benefited company profits.</span>{" "}
+                  </div>{" "}
+                  <div className="line">
+                    {" "}
+                    <strong>Now:</strong>{" "}
+                    <span>
+                      {" "}
+                      Gift shopping shares profits with your favorite charities.{" "}
+                    </span>{" "}
+                  </div>{" "}
+                </div>{" "}
               </div>
             </AnimatedSection>
           </AnimatedSection>
@@ -168,18 +168,19 @@ export default function HomePage() {
           >
             <img src="/images/why_wo_do.webp" alt="Community outreach" />
             <AnimatedSection delay={0.4} className="overlay">
-              <div className="overlaySpacer" />
-              <div className="overlayInner">
-                <h2>Why We Do It</h2>
-                <ul>
+              <div className="overlayInner portraitRight">
+                <h2 className="alignTopRight">Why We Do It</h2>
+                <ul className="bottomBullets">
                   <li>
-                    <strong>Shoppers:</strong> Make the world brighter.
+                    Shoppers get a place to shop they can feel good about.
                   </li>
                   <li>
-                    <strong>Suppliers:</strong> Sell with real purpose.
+                    Suppliers get a place to sell their wares to benefit
+                    communities.
                   </li>
                   <li>
-                    <strong>Charities:</strong> Easily raise more funds.
+                    Charities get an easy way to raise funds to help them do
+                    more good.
                   </li>
                 </ul>
               </div>
@@ -254,7 +255,7 @@ export default function HomePage() {
                   <h3 id="charities-title">Charities</h3>
                   <p>
                     We ask charities to do a few easy things with the resources
-                    we provide to them. In exchange we give them a chunk of the
+                    we provide to them. In exchange we give them a half of the
                     profits. We do most of the work, they receive most of the
                     benefit!
                   </p>

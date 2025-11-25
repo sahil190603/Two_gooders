@@ -26,7 +26,7 @@ const charitiesData = [
   },
   {
     id: 6,
-    name: "Accion International",
+    name: "University of Oregon Men’s Club Volleyball",
     description: "We are a Division I NCVF club volleyball team, competing in the PIVA conference with teams from the Pacific Northwest region."
   }
 ];

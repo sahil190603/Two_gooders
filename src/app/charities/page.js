@@ -1,20 +1,19 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Table, Input, Button, Space, Card } from "antd";
+import { Table, Input, Button, Space, Card, Typography } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
 import charitiesData from "../Data/two_gooders_charity";
-import { AnimatedSection } from "../components/AnimatedSection"; // <- animation wrapper
+import { AnimatedSection } from "../components/AnimatedSection";
 
-const { Search } = Input;
+const { Text } = Typography;
 
 const CharitiesPage = () => {
   const router = useRouter();
   const [searchText, setSearchText] = useState("");
   const [selectedLetter, setSelectedLetter] = useState("");
 
-  // Filter charities based on search and selected letter
   const filteredCharities = useMemo(() => {
     let filtered = charitiesData;
 
@@ -69,13 +68,40 @@ const CharitiesPage = () => {
         </Button>
       ),
     },
+    {
+      title: "Affiliate Link to Access the Gift Shop",
+      dataIndex: "affiliate_link",
+      key: "affiliate_link"
+    }
   ];
 
   return (
     <div style={{ padding: "24px", marginTop: "80px" }}>
       {/* Card + all content animated as a sequence */}
       <AnimatedSection delay={0.1} className="charitiesPageRoot" aria-label="Charities directory">
-        <Card title="Charities Directory" style={{ borderRadius: 0 }}>
+        {/* --- NEW BAR ABOVE THE CARD --- */}
+        <AnimatedSection delay={0.15}>
+          <div
+            role="note"
+            aria-live="polite"
+            style={{
+              background: "rgb(219, 180, 133)",
+              padding: "5px",
+              borderRadius: 0,
+              marginBottom: "16px",
+              lineHeight: 1.4,
+              fontSize: 14,
+              textAlign: "center",
+              boxSizing: "border-box"
+            }}
+          >
+            <Text>
+              To shop on behalf of your chosen charity, use the “Shop for this charity” link. We will calculate half of the profit from your purchase and send it to that charity.
+            </Text>
+          </div>
+        </AnimatedSection>
+
+        <Card title="Charities Directory" style={{ borderRadius: 0 , backgroundColor: "transparent"}}>
           {/* Search row */}
           <AnimatedSection delay={0.2}>
             <div style={{ marginBottom: "16px" }}>
@@ -117,7 +143,7 @@ const CharitiesPage = () => {
 
           {/* Results count */}
           <AnimatedSection delay={0.3}>
-            <div style={{ marginBottom: "16px", color: "#666" }}>
+            <div style={{ marginBottom: "16px", color: "#515151" }}>
               Showing {filteredCharities.length} of {charitiesData.length} charities
               {selectedLetter && ` starting with "${selectedLetter}"`}
               {searchText && ` matching "${searchText}"`}

@@ -81,7 +81,7 @@ export default function Footer() {
 
         <div className={styles.column}>
           <h4>Subscribe</h4>
-          <p className={styles.subscribeText}>Get Two Gooder's Emails!</p>
+          <p className={styles.subscribeText}>Get fun updates from Two Gooders!</p>
           <form className={styles.subscribeForm} onSubmit={handleSubscribe}>
             <input
               type="email"

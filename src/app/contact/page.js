@@ -39,7 +39,7 @@ export default function Contactpage() {
 
         {/* Form Card */}
         <AnimatedSection delay={0.2}>
-          <Card style={{ boxShadow: "none", borderRadius: 2 }}>
+          <Card style={{ boxShadow: "none", backgroundColor: "transparent", border: "none" }}>
             <Form
               form={form}
               layout="vertical"

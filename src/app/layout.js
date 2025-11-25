@@ -1,4 +1,3 @@
-// app/layout.js
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 import TopHeader from "./components/Layout/Header";
@@ -34,25 +33,42 @@ export default function RootLayout({ children }) {
             theme={{
               token: {
                 fontFamily: "var(--font-lato)",
+
+                colorText: "#515151",
+                colorTextBase: "#515151",
+                colorTextHeading: "#515151",
+                colorTextSecondary: "#515151",
+
+                colorBg: "#FDFCF9",
+                colorBgLayout: "#FDFCF9",
+                colorBgContainer: "#FDFCF9",
               },
+
               components: {
+                Typography: {
+                  fontFamily: "var(--font-playfair)",
+                  colorText: "#515151",
+                },
                 Table: {
                   borderRadius: 0,
                   headerBorderRadius: 0,
-                },
-                Typography: {
-                  fontFamily: "var(--font-playfair)",
                 },
                 Menu: {
                   fontFamily: "var(--font-lato)",
                 },
                 Button: {
                   fontFamily: "var(--font-lato)",
-                  borderRadius: 0
+                  borderRadius: 0,
+                  colorText: "#515151",
                 },
                 Input: {
-                  borderRadius: 0
-                }
+                  borderRadius: 0,
+                  colorText: "#515151",
+                },
+                Select: {
+                  borderRadius: 0,
+                  colorText: "#515151",
+                },
               },
             }}
           >

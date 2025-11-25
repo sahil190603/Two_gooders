@@ -24,7 +24,7 @@
 
 /* Main header (no animation, no scroll effect) */
 .header {
-  background: #FDFCF9;
+  background: rgb(253, 252, 249) !important;
   height: 40px; /* fixed height */
   display: flex;
   align-items: center;
@@ -56,7 +56,7 @@
 }
 
 .menu :global(.ant-menu-item) {
-  color: #000;
+  color: #515151;
   padding: 0 14px;
   margin: 0 6px;
   font-size: 13px;
@@ -95,7 +95,7 @@
   left: 0;
   width: 0;
   height: 3px; /* Smaller, thinner line */
-  background-color: #000; /* Black color */
+  background-color: #515151;
   border-radius: 3px; 
   transition: width 0.3s ease-in-out;
   z-index: 1;
@@ -106,12 +106,12 @@
 }
 
 .menu :global(.ant-menu-item:hover) {
-  color: #000 !important;
+  color: #515151 !important;
   background: transparent !important;
 }
 
 .menu :global(.ant-menu-item:hover a) {
-  color: #000 !important;
+  color: #515151 !important;
 }
 
 /* Remove any Ant Design default hover backgrounds and borders */
@@ -130,7 +130,7 @@
 .menu :global(.ant-menu-horizontal > .ant-menu-item-selected),
 .menu :global(.ant-menu-horizontal > .ant-menu-submenu-selected) {
   border-bottom: none !important;
-  color: #000 !important;
+  color: #515151 !important;
 }
 
 /* center logo */
@@ -144,7 +144,7 @@
 .logo {
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: #515151;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
@@ -159,16 +159,16 @@
 
 /* button icons */
 :global(.ant-btn-text) {
-  color: #000;
+  color: #515151;
 }
 
 :global(.ant-btn-text:hover) {
-  color: #666;
+  color: #515151;
 }
 
 /* badge style */
 :global(.ant-badge .ant-badge-count) {
-  background: #000;
+  background: #515151;
 }
 
 /* Mobile menu button - REMOVED */

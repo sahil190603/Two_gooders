@@ -79,8 +79,8 @@ const TopHeader = () => {
                 style={{
                   border: "none",
                   background: "transparent",
-                  fontSize: "15px",
-                  fontWeight: 500,
+                  fontSize: "20px",
+                  fontWeight: 600
                 }}
               />
             </div>

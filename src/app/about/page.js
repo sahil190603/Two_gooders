@@ -9,7 +9,6 @@ export default function About() {
   
   return (
     <main className={styles.page}>
-      {/* HERO */}
       <AnimatedSection
         delay={0.1}
         className={styles.hero}

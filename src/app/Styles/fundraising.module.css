@@ -93,7 +93,7 @@
 
 /* paragraph text */
 .sectionText {
-  color: #333333;
+  color: #515151;
   line-height: 1.6;
   font-size: var(--text-lg); /* ~16px */
 }
